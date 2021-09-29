@@ -22,6 +22,8 @@ This is a repository *entirely dedicated* to all kind of questions ranging from 
 
 # 🎇How To Contribute 🎇
 
+***Read [contribution guidelines](./Contributing.md)***
+
 To start contributing, follow the below guidelines:
 
 🌟. Star🌟 the repo to appreciate the work.
