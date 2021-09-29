@@ -3,7 +3,7 @@
 This is a repository *entirely dedicated* to all kind of questions ranging from basic DSA to CP. It aims to provide a solution to different questions. These questions are from various coding platforms like Hackerrank, HackerEarth, Leetcode, Codechef, Codeforces, InterviewBit, AtCoder.
 
 ## 🎓Platforms To Be Considered 🎓
----
+
 - HackerRank
 - HackerEarth
 - Leetcode
@@ -13,12 +13,13 @@ This is a repository *entirely dedicated* to all kind of questions ranging from 
 - AtCoder
 
 ## Languages To Be Considered 
----
+
 - C++
 - C
 - Python
 - Java
 - JavaScript
+
 # 🎇How To Contribute 🎇
 
 To start contributing, follow the below guidelines:
@@ -35,7 +36,7 @@ To start contributing, follow the below guidelines:
 
 4. Work on it i.e 
    * Solve that question by yourself.
-   * Add it to your forked repo.
+   * Add it to your forked repo, if the folder doesn't exist create it first and then add your code.
 
 5. Make a pull request. 
 
@@ -45,7 +46,7 @@ To start contributing, follow the below guidelines:
 
 
 ## 🎏 Steps For Making A Pull Request 🎏
----
+
 **1.** **Fork** [this](https://github.com/kanak22/CP-DSA-Questions) repository.
 
 **2.** **Clone** your forked copy of the project.
@@ -114,8 +115,6 @@ git push -u origin <your_branch_name>
 **15** 🎉 WOAHHHH!!!! 🎉 you made a pull request, Wait for it to get approved and merged 🤗🤗
 
 <p align="center"><img src="https://media.giphy.com/media/5T06ftQWtCMy0XFaaI/giphy.gif?cid=ecf05e47177480twu7lsjmuc468224osnvqmrj12wojrhl4o&rid=giphy.gif&ct=g" width = 90%></p>
-
----
 
 # 🎉🎉🎉🎉🎉🎉 ___HAPPY CONTRIBUTING!___ 🎉🎉🎉🎉🎉🎉
 
