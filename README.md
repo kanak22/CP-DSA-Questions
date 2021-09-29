@@ -20,7 +20,6 @@ This is a repository *entirely dedicated* to all kind of questions ranging from 
 - JavaScript
 --- 
 ## ___For interaction and queries: ***[Join the community](https://discord.gg/rTfxYAWD)***___
-
 ---
 
 # 🎇How To Contribute 🎇
