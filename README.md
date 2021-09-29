@@ -1,7 +1,6 @@
 # 🎉CP-DSA-Questions🎉
 
 This is a repository *entirely dedicated* to all kind of questions ranging from basic DSA to CP. It aims to provide a solution to different questions. These questions are from various coding platforms like Hackerrank, HackerEarth, Leetcode, Codechef, Codeforces, InterviewBit, AtCoder.
-
 ## 🎓Platforms To Be Considered 🎓
 
 - HackerRank
@@ -19,6 +18,10 @@ This is a repository *entirely dedicated* to all kind of questions ranging from 
 - Python
 - Java
 - JavaScript
+--- 
+## ___For interaction and queries: ***[Join the community](https://discord.gg/rTfxYAWD)***___
+
+---
 
 # 🎇How To Contribute 🎇
 
