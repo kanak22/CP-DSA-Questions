@@ -14,6 +14,9 @@ int count(int arr[], int n, int val)
               int sum = arr[i] + arr[left_ind] + arr[right_ind];
             if ( sum >=val ) 
                 right_ind--; 
+             // since all the element between left and right index have the value
+             // less than the desired val which gives us the required sum.
+             //Hence adding all these triplets in the cnt . 
             else
             { 
                  cnt += (right_ind - left_ind); 
