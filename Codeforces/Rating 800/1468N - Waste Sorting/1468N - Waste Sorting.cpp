@@ -1,3 +1,14 @@
+/*It is quite obvious that if c1<a1, c2<a2 or c3<a3, the answer is NO because it is impossible to fit even the items that fit only into one container. 
+Otherwise, let's get rid of a1, a2, a3 by decreasing ci by ai (1≤i≤3).
+
+Now we have a problem with 3 containers and only 2 item types (4-th and 5-th), the fourth item type fits only into the first and into the third container, 
+the fifth item type — into the second and into the third container. 
+Since the first container accepts only items of type 4, we should fit the maximum possible number of items of type 4 there — that is, min(a4,c1) items. Similarly, 
+we should fit the maximum possible number of items of type 5 into the second container (min(a5,c2) items). 
+After that, we only have to check that all the remaining items can be fit into the third container.
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
