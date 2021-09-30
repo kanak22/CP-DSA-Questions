@@ -1,3 +1,37 @@
+/*
+ Problem Link:
+ https://www.hackerrank.com/challenges/the-hurdle-race/problem
+
+ Ques.
+ A video player plays a game in which the character competes in a hurdle race. 
+ Hurdles are of varying heights, and the characters have a maximum height they can jump. 
+ There is a magic potion they can take that will increase their maximum jump height by 1 
+ unit for each dose. How many doses of the potion must the character take to be able to 
+ jump all of the hurdles. If the character can already clear all of the hurdles, return 0.
+
+Sample Input 0:
+5 4
+1 6 3 5 2
+
+Sample Output 0:
+2
+
+Explaination:
+Dan's character can jump a maximum of k=4 units, but the tallest hurdle has a height of h1=6:
+To be able to jump all the hurdles, Dan must drink 6-4=2 doses.
+
+Sample Input 1:
+5 7
+2 5 4 5 2
+
+Sample Output 1:
+0
+
+Explaination:
+Dan's character can jump a maximum of k=7 units, which is enough to cross all the hurdles:
+Because he can already jump all the hurdles, Dan needs to drink 0 doses.
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,9 +51,10 @@ vector<string> split(const string &);
 
 int hurdleRace(int k, vector<int> height) {
  int max;
- max = *max_element(height.begin(),height.end());
- if(k>=max) return 0;
- else return max-k;
+ max = *max_element(height.begin(),height.end());  //storing the maximum element in max variable
+ 
+ if(k>=max) return 0;   //if k is greater than or equal to max height, no doses so return 0
+ else return max-k;     //else return (max-k) doses which he require to drink
 }
 
 int main()
