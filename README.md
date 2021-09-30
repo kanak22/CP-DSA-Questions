@@ -1,6 +1,6 @@
 # 🎉CP-DSA-Questions🎉
 
-This is a repository *entirely dedicated* to all kind of questions ranging from basic DSA to CP. It aims to provide a solution to different questions. These questions are from various coding platforms like Hackerrank, HackerEarth, Leetcode, Codechef, Codeforces, InterviewBit, AtCoder.
+This is a repository *entirely dedicated* to all kind of questions ranging from basic DSA to CP. It aims to provide a solution to different questions. These questions are from various coding platforms like Hackerrank, HackerEarth, Leetcode, Codechef, Codeforces, InterviewBit, AtCoder. It also consist [450 DSA Sheet](https://450dsa.com/).
 ## 🎓Platforms To Be Considered 🎓
 
 - HackerRank
