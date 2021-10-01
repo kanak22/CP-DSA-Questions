@@ -6,7 +6,7 @@
     Step 1 : We find the minimum no of bananas that Koko can eat which is 1 <- this is our start pointer
     Stpe 2: We find the maximum no of bananas that Koko can eat whict is the max in the piles <- this is our end pointer
     Step 3: We do a binary search and check wether Koko can eat the bananas in the provided time which is the mid pointer = start + (end-start) /2
-    Step 4: If she can eat the bananas in the given tile find a solution for lesser time and move the end pointer to the mid value -> its a potential ans 
+    Step 4: If she can eat the bananas in the given time find a solution for lesser time and move the end pointer to the mid value -> its a potential ans 
     Step 5: If she can't eat the bananas in the given time increase the speed by moving the start pointer to mid + 1
     Note : Here start pointer is minSpeed
                 end pointer is maxSpeed
