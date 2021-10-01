@@ -2,4 +2,5 @@
 
 Q: https://leetcode.com/problems/largest-rectangle-in-histogram/
 Q: https://leetcode.com/problems/delete-and-earn/
+Q: https://leetcode.com/problems/longest-harmonious-subsequence/
 
