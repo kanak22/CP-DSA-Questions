@@ -59,10 +59,13 @@ When contributing to this repository, please first open an issue and discuss the
 
 - As mentioned, **Directory structure should be followed strictly.**
 
+- Comment your code.
+
 - Make a seperate branch for each pull request.
 
 -  Do not spam in an issue.
 
+- ***Do Not make more than 3 issues at a time and No one will be assigned more than 3 issues at a particular time.***
 
 # 🎉Best Of Luck! 🎉
 
