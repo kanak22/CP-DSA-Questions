@@ -3,4 +3,4 @@
 #### Questions in Arrays:
 | # | Question |
 |---|----------|
-| 1 | ...      |
+| 1 | Reversing an array    |
