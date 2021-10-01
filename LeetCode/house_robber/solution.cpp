@@ -1,7 +1,9 @@
 /*
-Approach : since the problem has optimal substructure (result of smaller subproblems can be combined for finding result of bigger subproblems)
-and overlapping subproblems (same subproblems being computed again and again), we can use dp.
-Here I've solved using Bottom up Approach.
+Approach : Since, we can either take current element with i-2 elements' maximum or leave current element and go on with i-1 elements' maximum
+          we take the maximum of two and get the answer.
+          since, the problem has optimal substructure (result of smaller subproblems can be combined for finding result of bigger subproblems)
+          and overlapping subproblems (same subproblems being computed again and again), we can use dp.
+          Here I've solved using Bottom up Approach.
 */
 
 
