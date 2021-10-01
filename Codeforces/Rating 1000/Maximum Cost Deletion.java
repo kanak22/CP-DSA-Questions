@@ -1,4 +1,18 @@
+/*
+In this problem we have to erase a character(s) from the String so that we can Maximise the cost which is calculated by 
+folmula a*l+b.
 
+
+The value of a*n will always be there irrespective of the nature of a. Therefore we can only optimize this code w.r.t. nature of b.
+
+Suppose the value  b is positive , so we can delete characters one by one such that we can get the maximum score.
+
+If b is negative then we have to delete Smallest subsequence of Zero or One to Maximize our cost.
+ 
+ 
+ For more Detailed solution refer to editorial : https://codeforces.com/blog/entry/92864   (Problem B)
+
+*/
 import java.util.*;
 import java.io.*;
 public class MaximumCostDeletion{
