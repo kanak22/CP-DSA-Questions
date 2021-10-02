@@ -39,11 +39,16 @@ n == height.length
 class Solution {
     public int maxArea(int[] height) {
         int maxArea = 0;
+        // l is the initial leftmost height
+        // r is the initial leftmost height
         int l = 0 , r = height.length -1;
+        // diff is the distance between two end l and r
         int diff = r-l;
+        // looping until l is less than r
         while(l<r){
             diff = r-l;
             int smallestHeight;
+            // storing the next smallest height
             if(height[l]> height[r]){
                 smallestHeight = height[r];
                 r--;
@@ -51,11 +56,14 @@ class Solution {
                 smallestHeight = height[l];
                 l++;
             }
+            // finding the required area
             int area = smallestHeight * diff;
+            // checking for the max area
             if(maxArea<area)
                 maxArea = area;
         }
         // System.out.println(maxArea);
+        // return the maxArea for the vessel
         return maxArea;
     }
 }
