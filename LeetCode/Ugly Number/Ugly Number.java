@@ -20,6 +20,8 @@ class Solution {
 
        while(n > 1) {
 
+        // Divide n by 2,3 & 5 and check each time it prime factor belong to th condition or not
+
            if(n % 2 == 0)
                n /= 2;
            else if(n % 3 == 0)
@@ -28,6 +30,9 @@ class Solution {
                n /= 5;
            else
                return false;
+
+        // If prime factor doesn't belong or equal to 1, then return false.
+
        }
 
        return true;
