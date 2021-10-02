@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int bs(vector<int>nums, int n, int target)
+    int binarysearch(vector<int>nums, int n, int target)
     {
         int low = 0, high = n-1, mid;
         while(low <= high)
@@ -35,9 +35,11 @@ public:
     int search(vector<int>& nums, int target) {
         
         int n = nums.size();
+
+        //check for base cases
         if(n==0) return -1;
         
-        return bs(nums,n,target);
+        return binarysearch(nums,n,target);
         
     }
 };
