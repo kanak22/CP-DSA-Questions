@@ -12,6 +12,7 @@ const ll mod = 1000000007;
 ll k, l, m, n, x, y, z;
 ll ans = 0;
 
+// to calculate the factors by sqrt decomposition
 vector<ll> factors(int x)
 {
     vector<ll> ans;
@@ -33,6 +34,7 @@ void solve(int tc = 0)
     cin >> n;
     vector<pair<int, int>> arr(n);
 
+    // we will find the pairs which divides arr[i], arr[j] mainly dp{i}
     for(ll i = 1; i<=n; i++)
     {
         cin >> x;
@@ -43,6 +45,13 @@ void solve(int tc = 0)
     unordered_map<int, unordered_map<int, int>> dp;
     ans = 0;
 
+    // first we will create the hash table so that
+    // dp{i}[x][y] will represent the number of j(j<i) such that x = D_{j,1} and y = D_{j,2} 
+    
+    // here first we will find the factors D{i,2} quickly, using sqrt decomposition. 
+    // Then, for each factor f, add DP[f][D_{i,1}] to the answer. 
+    // finally, update the hash table by adding 1 to DP[D_{i,1}][f] for all factors f.
+    
     for (auto it : arr)
     {
         auto facs = factors(it.second);
