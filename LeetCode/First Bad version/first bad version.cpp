@@ -1,4 +1,4 @@
-### Question
+/* Question
 
 You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
 
@@ -10,7 +10,7 @@ Constraints:
 
 1 <= bad <= n <= 231 - 1
 
-```
+
 Example 1:
 
 Input: n = 5, bad = 4
@@ -20,5 +20,31 @@ call isBadVersion(3) -> false
 call isBadVersion(5) -> true
 call isBadVersion(4) -> true
 Then 4 is the first bad version.
+*/
 
-```
+//Code
+
+class Solution {
+public:
+    int firstBadVersion(int n) {
+        int l=1;
+        int h=n;
+        int bad=-1;
+        int mid;
+        while(l<=h)
+        {
+            mid=l+(h-l)/2;
+            if(isBadVersion(mid))
+            {
+                bad=mid;
+                h=mid-1;
+            }
+            else
+            {
+                l=mid+1;
+            }
+        }
+        return bad;
+        
+    }
+};
