@@ -1,4 +1,4 @@
-   // To know about the thought process, checkout the editorial on this link : https://discuss.codechef.com/t/palint-editorial/94376
+// To know about the thought process, checkout the editorial on this link : https://discuss.codechef.com/t/palint-editorial/94376
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -12,6 +12,8 @@ const ll mod = 1000000007;
 ll k, l, m, n, x, y, z;
 ll ans = 0;
 
+
+// In this question, we have to make as many equal integers as possible.
 void solve(int tc = 0)
 {
     cin >> n >> x;
@@ -24,6 +26,9 @@ void solve(int tc = 0)
         cin >> a[i];
         mp[a[i]]++;
         
+        // we will store a[i] and a[i ^ x] in map in order to find the element max no of times from mp 
+        // and total no of operations from xor_map 
+        
         if((a[i] ^ x) != a[i]) 
         {
             xor_map[a[i] ^ x]++;
@@ -33,12 +38,13 @@ void solve(int tc = 0)
 
     ans = -1, k = -1, l = 0;
     
+    // we are checking max frequency element from mp
     for(auto it : mp)
     {
         if(it.second > k)
 	    {
-            l = xor_map[it.first];
-            k = it.second;
+            	l = xor_map[it.first];
+            	k = it.second;
 	    }
 	    
 	    else if(it.second == k && xor_map[it.first] < l)
