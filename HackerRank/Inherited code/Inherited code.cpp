@@ -6,7 +6,9 @@ https://www.hackerrank.com/challenges/inherited-code/problem*/
 #include <exception>
 using namespace std;
 
-
+/*In this below section we are asked to create an exception
+when the username is too short when the user name is too short we create an exception 
+and print Too Short and size of the string*/
 
 class BadLengthException{
     private:
