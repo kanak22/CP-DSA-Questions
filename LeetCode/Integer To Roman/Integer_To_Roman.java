@@ -59,7 +59,7 @@ import java.util.Scanner;
 import java.util.HashMap;
 
 // Main class
-public class Int_To_Roman {
+public class Integer_To_Roman {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number between 1 and 3999");
@@ -85,6 +85,7 @@ class Solution {
         map.put(1000,'M');
         
         // Variable set to 1000 to start finding the roman equivalent from left to right.
+        // div stores the order and is decremented like 1000 -> 100 -> 10 -> 1.
         int div = 1000;
         
         // StringBuilder to store the final answer.
@@ -92,34 +93,53 @@ class Solution {
         
         
         while(A>0){
-            int count = A/div;
-            if(count == 4){
+            int num = A/div;
+            // suppose num = 4 and div = 100.
+            // so to add 400 to our answer we have to print "CD".
+            // so this is done by appending value corresponding to div and then 5*div.
+            // in above case, this prints : 'C' for 100 followed by 'D' for 5*100.
+            if(num == 4){
                 ans.append(map.get(div)).append(map.get(5*div));
             }
-            else if(count == 5){
+            // similarly for num = 5, this part simply prints 5*div.
+            else if(num == 5){
                 ans.append(map.get(5*div));
             }
-            else if(count == 9){
+            // suppose num = 9 and div = 100.
+            // so to add 900 to our answer we have to print "CM".
+            // so this is done by appending value corresponding to div and then 10*div.
+            // in above case, this prints : 'C' for 100 followed by 'M' for 10*100.
+            else if(num == 9){
                 ans.append(map.get(div)).append(map.get(10*div));
             }
             else{
-                if(count <= 3){
-                    while(count-->0){
+                // for values of num which are less than 3. We need to print the value of div (num) number of times in the output string.
+                // suppose A = 30. So A/10 = num = 3.
+                // So we print value of div(which is 'X' beacuse div = 10) three times to make it "XXX" which is roman for 30 .
+                if(num <= 3){
+                    while(num-->0){
                         ans.append(map.get(div));
                     }
                 }
-                else if(count > 5 && count < 9){
+                // if the number is between 5 and 9. Let's say 8.
+                // in this case first 'V' is printed which is value of 5.
+                // then 'I' is printed (8-5) times.
+                else if(num > 5 && num < 9){
                     ans.append(map.get(5*div));
-                    count -= 5;
-                    while(count-->0){
+                    num -= 5;
+                    while(num-->0){
                         ans.append(map.get(div));
                     }
                 }
             }
+            // atlast we store the remainder of A/div and the loop continues.
             A = A%div;
+            // this statements simply does 1000 -> 100 -> 10 -> 1.
             div /= 10;
             
         }
+
+        // final answer.
         return ans.toString();
     }
 }
