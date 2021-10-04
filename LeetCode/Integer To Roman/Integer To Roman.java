@@ -59,7 +59,7 @@ import java.util.Scanner;
 import java.util.HashMap;
 
 // Main class
-public class Integer_To_Roman {
+class Integer_To_Roman {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number between 1 and 3999");
