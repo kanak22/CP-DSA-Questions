@@ -12,11 +12,11 @@ Output: 4
 
 */
 int MissingNumber(vector<int>& array, int n) {
-        int TotalSum = (n*(n+1))/2;
+        int TotalSum = (n*(n+1))/2;  // sum of first n natural numbers
         int i,sumObtain=0;
         for(i=0;i<n-1;i++)
         {
-            sumObtain += array[i];
+            sumObtain += array[i];  // sum of elemnets in the array
         }
-        return TotalSum-sumObtain;
+        return TotalSum-sumObtain;  // difference between these 2 sums will give missing number
     }
