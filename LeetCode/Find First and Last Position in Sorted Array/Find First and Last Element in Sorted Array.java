@@ -4,14 +4,14 @@
     This qyestion can be solved using Binary Seach
 
     Step 1: find the left most position of the element -> this is the first position
-        Approach: We look for the target using binary search : once we encoumter the target
-                    we mark it as a  potential ans (we store it as ans[0] = mid) and we look if there are other occurences in the
-                    left half by doing end = mid - 1 as the goal of this half is to find the leftmost occurence target
+        Approach: We look for the target using binary search : once we encounter the target
+                  we mark it as a  potential ans (we store it as ans[0] = mid) and we look if there are other more occurences in the
+                  left half by doing end = mid - 1 as the goal of this half is to find the leftmost occurence of the target.
 
     Step 2: find the right most position of the element -> this is the last position
-        Approach: It is very similar to the approach in step 1, the only difference is that instaed of searching in the left half we search in the 
-                    right half. So once we encounter the target we store it as a potential ans(ny ans[1] = mid) and we look in 
-                    the right half for more occurences as the goal is to find the right most position
+        Approach: It is very similar to the approach in step 1, the only difference is that instead of searching in the left half we search in the 
+                  right half. So once we encounter the target we store it as a potential ans(by storing it as ans[1] = mid) and we look in 
+                  the right half for more occurences as the goal is to find the right most position
 
 */
 
