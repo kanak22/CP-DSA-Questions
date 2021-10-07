@@ -8,6 +8,9 @@ int main(){
     long long x,y,n;
     scanf("%lld%lld%lld",&x,&y,&n);
     int ans;
+    
+    //F1 = x , f2 = y , f3 = f2-f1 = y-x , f4 = f3-f2 = -x , f5 = f4-f3 = -y , f6 = f5-f4 = x-y , f7 = f6-f5 = x , f8 = f7-f6 = y
+    // so one can see this is a repeting cycle ,which repetes after every 6 nos 
     if(n%6==1){
         ans=x;
     }
