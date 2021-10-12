@@ -3,6 +3,7 @@
  * Take out rotten oranges from the queue and rot other possible oranges
  */
 
+// Node class to store nodes of queue
 class Node {
     constructor(value) {
         this.value = value
@@ -10,6 +11,7 @@ class Node {
     }
 }
 
+//Queue class to maintain the queue of rotten oranges
 class Queue {
     constructor() {
         this.first = null
@@ -17,6 +19,7 @@ class Queue {
         this.size = 0
     }
 
+    //Add to queue
     enqueue(val) {
         let newNode = new Node(val)
         if(!this.first) {
@@ -30,6 +33,7 @@ class Queue {
         return ++this.size
     }
 
+    //Remove from queue
     dequeue() {
         if(!this.first) return null
         let temp = this.first
@@ -41,6 +45,7 @@ class Queue {
         return temp
     }
 
+    //Check if queue is empty
     empty() {
         if(!this.size) {
             return true
@@ -49,14 +54,17 @@ class Queue {
         }
     }
 
+    //Get the length of queue
     length() {
         return this.size
     }
 
+    //Get the first item in queue
     front() {
         return this.first
     }
 
+    //Method to print the queue elements
     print() {
         let arr = []
         let current = this.first
