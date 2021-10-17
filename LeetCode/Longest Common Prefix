@@ -1,20 +1,25 @@
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& nums) {
+    //if given vector is empty, return an empty string
         if(nums.size()==0)
             return "";
         else
         {
+        //string to store the longest common prefix
             string s=nums[0];
             int i=1;
             int k=0;
-         int t=s.size()-1;
+            int t=s.size()-1;
+            //loops over all the given strings
             while(i<nums.size())
             {
+            //if common, increment to the next string
                 if(nums[i].find(s)==0)
                 {
                     i+=1;
                 }
+                //else clear the longest common prefix string from the uncommon characters
                 else
                 {
                     s.erase(t-k,t+1);
