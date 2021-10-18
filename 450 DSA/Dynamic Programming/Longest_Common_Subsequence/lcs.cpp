@@ -30,7 +30,7 @@ int lcs(string s1, string s2)
         dp[i][0]=0;        //filling first column of dp array with value 0
     
     for(int j=0;j<=n;j++)
-        dp[0][j]=0;      //filling first column of dp array with value 0.
+        dp[0][j]=0;      //filling first row of dp array with value 0.
         
     for(int i=1; i<=m; i++)
     {
@@ -43,7 +43,7 @@ int lcs(string s1, string s2)
         }
     }
     
-    return dp[m][n];   //returning the value of longest common subsequence in two strings
+    return dp[m][n];   //returning the integer value of longest common subsequence 
     
 }
 
