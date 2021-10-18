@@ -1,5 +1,3 @@
-//https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/
-
 class Solution {
 public:
     // string reverse(string s){
