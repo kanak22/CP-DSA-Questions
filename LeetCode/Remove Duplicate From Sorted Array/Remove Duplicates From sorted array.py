@@ -4,5 +4,5 @@ class Solution:
         nums[:] = list(set(nums))
         #sorting the array nums
         nums.sort()
-        
         return len(nums)
+        
