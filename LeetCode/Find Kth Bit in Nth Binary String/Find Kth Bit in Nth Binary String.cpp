@@ -30,16 +30,16 @@ public:
         string s1;
         while(n--){
             s1=s;
-            reverse(s1.begin(),s1.end());
+            reverse(s1.begin(),s1.end());//reverses the binary number
             // for(double i=0; i<s1.length();){
             //     if(s1[i]=='0') s[i]='1';
             //     else s1[i]='0';
             //     i=i+1;
             // }
             for(char &c: s1){
-                if(c=='0') c='1'; else c='0';
+                if(c=='0') c='1'; else c='0';//inverts the binary number
             }
-            s+="1"+s1;
+            s+="1"+s1;//finally adds 1 to it
         }
         return s[k-1];
     }
