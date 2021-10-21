@@ -1,172 +1,148 @@
 #include <bits/stdc++.h>
-#define ll long long
-#define f first
-#define s second
-
+#ifdef mlocal
+#include "./Competitive-Code-Library/snippets/prettyprint.h"
+#endif
 using namespace std;
-vector<long long> parent;
-vector<vector<long long>> child;
-vector<long long> glb, heavyChild, len;
-vector<pair<long long, long long>> segment;
-//set<pair<pair<long long, long long>, long long>> st;
-long long dfsCur = 1;
-long long n;
-ll wyn = 0;
+#define for_(i, s, e) for (int i = s; i < (int) e; i++)
+#define for__(i, s, e) for (ll i = s; i < e; i++)
+typedef long long ll;
+typedef vector<int> vi;
+typedef array<int, 2> ii;
+#define endl '\n'
 
-void dfs(long long x, long long lvl = 0){
-	segment[x].f = dfsCur;
-	dfsCur++;
-	glb[x] = lvl;
-	for(auto it:child[x]){
-		dfs(it, lvl+1);
-		dfsCur++;
-	}
-	segment[x].s = dfsCur;
+const int INF = 1e6;
+
+/**
+ * Find the the highest ancestor which currently points to my parent (of which I am the only child) by using binary lifting + segment tree + euler tour
+ * Propagate the change going up from it until a deeper (or equal) node is encountered in the subtree
+ * From the topmost changed node add the ladder length to the answer
+ * For all the other 'ladder break' operations add the length of the broken ladder starting at the previous correct child
+**/
+
+const int N = 8e5+1;  // limit for array size
+int n;  // array size
+ii tr[2 * N];
+
+void build() {  // build the tree
+	for (int i = n - 1; i > 0; --i) tr[i] = {-INF, -INF};
 }
 
-long long pot(long long x){
-	long long tmp = 1;
-	while(x){
-		x/=2;
-		tmp*=2;
-	}
-	return tmp;
+void modify(int p, ii &value) {  // set value at position p
+	for (tr[p += n] = value; p > 1; p >>= 1) tr[p >> 1] = max(tr[p], tr[p ^ 1]);
 }
 
-vector<set<long long>> tree;
-long long treeSize;
-
-void dodaj(long long x){
-	long long a = segment[x].f;
-	long long b = segment[x].s;
-	a+=treeSize;
-	b+=treeSize;
-	tree[a].insert(x);
-	tree[b].insert(x);
-	while(a/2!=b/2){
-		if(a%2==0) tree[a+1].insert(x);
-		if(b%2==1) tree[b-1].insert(x);
-		a/=2; b/=2;
+ii query(int l, int r) {  // sum on interval [l, r)
+	r++;
+	ii res = {-INF, -INF};
+	for (l += n, r += n; l < r; l >>= 1, r >>= 1) {
+		if (l&1) res = max(res, tr[l++]);
+		if (r&1) res = max(res, tr[--r]);
 	}
+	
+	return res;
 }
 
-void usun(long long x){
-	long long a = segment[x].f;
-	long long b = segment[x].s;
-	a+=treeSize;
-	b+=treeSize;
-	tree[a].erase(x);
-	tree[b].erase(x);
-	while(a/2!=b/2){
-		if(a%2==0) tree[a+1].erase(x);
-		if(b%2==1) tree[b-1].erase(x);
-		a/=2; b/=2;
-	}
-}
-
-long long getPath(long long v){
-	v = segment[v].f;
-	v+=treeSize;
-	ll maksi = -1, idx = -1;
-	while(v){
-		for(auto it:tree[v]){
-			//cout<<v<<" ------ "<<it<<'\n';
-			if(it>=0&&it<n){
-				if(glb[it]>maksi){
-					idx = it;
-					maksi = glb[it];
-				}
-			}//else cout<<"---- "<<v<<'\n';
+int main() {
+#ifdef mlocal
+	freopen("test.in", "r", stdin);
+#endif
+	
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	
+	int t; cin >> t;
+	while (t--) {
+		cin >> n;
+		vi par(n);
+		vector<vi> adj(n);
+		for_(i, 1, n) {
+			cin >> par[i];
+			par[i] -= 1;
+			adj[par[i]].push_back(i);
 		}
-		v/=2;
-	}
-	//cout<<v<<" "<<idx<<'\n';
-	assert(idx>=0);
-	return idx;
-}
-
-void init(){
-	wyn = 0;
-	tree.resize(0);
-	treeSize = pot(8*n);
-	tree.resize(2*treeSize+10);
-	heavyChild.resize(0);
-	heavyChild.resize(n, -1);
-	parent.resize(0);
-	parent.resize(n);
-	child.resize(0);
-	child.resize(n);
-	glb.resize(0);
-	glb.resize(n);
-	segment.resize(0);
-	segment.resize(n);
-	len.resize(0);
-	len.resize(n);
-}
-
-int main(){
-	ios_base::sync_with_stdio(0); cin.tie(nullptr); cout.tie(nullptr);
-	long long t; cin>>t;
-	while(t--){
-		cin>>n;
-		init();
-		parent[0] = -1;
-		for(long long i = 1; i < n; i++){
-			long long a; cin>>a;
-			a--;
-			parent[i] = a;
-			child[a].push_back(i);
-		}
-		dfs(0);
-		dodaj(0);
-		cout<<0<<' ';
-		for(long long i = 1; i<n; i++){
-			long long v = parent[i];
-			long long p = getPath(v);
-			long long it = i;
-			/*
-			cout<<"--------\n";
-			for(auto coc:st) cout<<1+coc.second<<" ";
-			cout<<"\n--------\n";
-			*/
-			//cout<<i<<" "<<v<<" "<<p<<'\n';
-			if(len[p]<glb[v]-glb[p]+len[it]+1){
-				//wydluzamy
-				//cout<<"DZIalamy\n";
-				while(len[p]<glb[v]-glb[p]+len[it]+1){
-					//cout<<p+1<<" "<<v+1<<" "<<it+1<<'\n';
-					long long u = heavyChild[v];
-					if(u!=-1) {
-						len[u] = len[p]-(glb[v]-glb[p])-1;
-						wyn+=len[u]*len[u];
-						dodaj(u);
-					}
-					heavyChild[v] = it;
-
-					wyn-=len[p]*len[p];
-					len[p]=glb[v]-glb[p]+len[it]+1;
-					wyn+=len[p]*len[p];
-
-					wyn-=len[it]*len[it];
-					len[it] = 0;
-					usun(it);
-
-					it = p;
-					v = parent[it];
-					if(v==-1) break;
-					p = getPath(v);
-				}
-			}else{
-				dodaj(i);
+		
+		vi tin(n), tout(n);
+		vector<ll> dep(n);
+		const int lg = __lg(n)+1;
+		vector<vi> up(n, vi(lg+1));
+		int tim = 0;
+		function<void(int)> dfs = [&] (int p) {
+			tin[p] = tim++;
+			for_(i, 1, lg+1) up[p][i] = up[up[p][i-1]][i-1];
+			
+			for (auto i: adj[p]) {
+				dep[i] = dep[p]+1;
+				up[i][0] = p;
+				dfs(i);
 			}
-			/*
-			for(long long j = 0; j < n; j++) cout<<len[j]<<" ";
-			cout<<'\n';
-			cout<<"WYNIK: "<<wyn<<"\n";
-			*/
-			cout<<wyn<<' ';
+			tout[p] = tim-1;
+		};
+		
+		dfs(0);
+//		MaxSegmentTree tree(n);
+		vector<ll> ans(n);
+		ans[0] = 0;
+		
+		vi chCount(n);
+		for_(i, 0, n) tr[n+i] = {-INF, -INF};
+		build();
+		function<int(int)> findPointingParent = [&] (int i) {
+			int farParent = i; // stores farthest parent that currently points to i's subtree
+			for (int l = lg; l >= 0; l--) {
+//				int pt = tree.mx(tin[up[farParent][l]], tout[up[farParent][l]])[1];
+				int pt = query(tin[up[farParent][l]], tout[up[farParent][l]])[1];
+				if (tin[pt] >= tin[i] and tout[pt] <= tout[i]) farParent = up[farParent][l];
+			}
+			
+			return farParent;
+		};
+		
+		ll val = 0;
+		
+		// update a part of an existing ladder to remove the old pointer and return the top of the ladder, given a middle node
+		function<int(int)> updateSegment = [&] (int d) {
+			int u = findPointingParent(d);
+//			cout << "found segment " << d+1 << " " << u+1 << endl;
+//			ll deepest = tree.mx(tin[u], tout[u])[0];
+			ll deepest = query(tin[u], tout[u])[0];
+			val += (max(deepest-dep[d]-1, 0LL) * max(deepest-dep[d]-1, 0LL)) - ((deepest-dep[u]) * (deepest-dep[u]));
+			
+			return u;
+		};
+		
+		for_(i, 0, n) {
+//			cout << "------------------- " << endl;
+//			cout << "starting " << i+1 << endl;
+//			cout << "------------------- " << endl;
+			if (i) {
+				if (chCount[par[i]] == 0) {
+					int curr = par[i];
+					while (true) {
+						int u = updateSegment(curr);
+//						if (!u or tree.mx(tin[par[u]], tout[par[u]])[0] >= dep[i]) {
+						if (!u or query(tin[par[u]], tout[par[u]])[0] >= dep[i]) {
+							curr = u;
+							break;
+						}
+						curr = par[u];
+					}
+					
+//					cout << "chain ends at " << curr+1 << " and has length " << dep[i]-dep[curr] << endl;
+//					cout << val << " -> ";
+					val += (dep[i]-dep[curr]) * (dep[i]-dep[curr]);
+				}
+				
+				chCount[par[i]]++;
+			}
+			
+			ans[i] = val;
+//			cout << ans << endl;
+			ii curr = {dep[i], i};
+//			tree.update(tin[i], curr);
+			modify(tin[i], curr);
 		}
-		cout<<'\n';
+		
+		for (auto i: ans) cout << i << " ";
+		cout << endl;
 	}
-	return 0;
 }
