@@ -8,7 +8,7 @@ int main()
     cin >> a >> b;
     int min, max=0;
 
-    // conditiono checking
+    // condition checking
     if (a < b)
     {
         min = a;
