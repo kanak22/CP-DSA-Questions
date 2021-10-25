@@ -24,7 +24,12 @@ typedef long double ld;
 typedef vector<int> VI;
 
 void solve()
-{ ///
+{
+    // n = no. of stations/cities
+    // m = no. of travellers
+    // a[i] = direction of train from i-th city , 1-> toward right, 2-> toward left, 0-> train not originating
+    // b[i] = destination of i-th traveller
+
     int n, m;
     cin >> n >> m;
     VI a(n), b(m);
@@ -33,8 +38,9 @@ void solve()
     for (int i = 0; i < m; i++)
         cin >> b[i];
 
-    vector<pair<int, int>> t(n); // left and right time for each station
-    for (int i = 0; i < n; i++)
+    vector<pair<int, int>> t(n); // left and right time for each station, i.e. t(i)<LEFT,RIGHT>
+    // Calculating time for trains having direction toward left, 
+    for (int i = 0; i < n; i++) 
     {
         if (a[i] == 1)
         {
@@ -43,14 +49,12 @@ void solve()
         else
         {
             if (i > 0 && t[i - 1].first != INT_MAX)
-            {
                 t[i].first += (t[i - 1].first + 1);
-            }
             else
                 t[i].first = INT_MAX;
         }
     }
-
+    // Calculating time for trains having direction toward right,
     for (int i = n - 1; i >= 0; i--)
     {
         if (a[i] == 2)
@@ -67,16 +71,16 @@ void solve()
                 t[i].second = INT_MAX;
         }
     }
-
+    // Finding minimum of both directions then print min. distance if it possible.
     for (int i = 0; i < m; i++)
     {
-        int min_dist = min(t[b[i] - 1].first, t[b[i] - 1].second);
-        if (b[i] == 1)
+        int min_dist = min(t[b[i] - 1].first, t[b[i] - 1].second); // 
+        if (b[i] == 1)  
             cout << 0 << " ";
-        else if (min_dist == INT_MAX)
-            cout << -1 << " ";
+        else if (min_dist == INT_MAX)   // not possible
+            cout << -1 << " ";  
         else
-            cout << min_dist << " ";
+            cout << min_dist << " ";  // possible minimum t
     }
 
     cout << endl;
@@ -85,7 +89,7 @@ void solve()
 int main()
 {
     fastIO;  // Fast input / output
-
+    // No. of cases
     cases(t)
         solve();
 }
