@@ -42,6 +42,8 @@ int main(){
 
    b[p][q]=0;
 
+   // Using a bfs call to fill the pattern array
+
    queue<pair<ll,ll>> r;
 
    r.push(make_pair(p,q));
@@ -118,6 +120,8 @@ int main(){
       }
 
    }
+
+   // Printing the array
 
    for(int i=0;i<x;i++){
       for(int j=0;j<y;j++)
