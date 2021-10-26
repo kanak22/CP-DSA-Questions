@@ -32,14 +32,21 @@ Output: [0,0,9,0,0]
 public:
     vector<int> productExceptSelf(vector<int>& a) {
         
-     int n=a.size();
-     vector<int> ds;
-        ds.push_back(1);
+     int n=a.size();  // size of a 
+     vector<int> ds; // declare a vector 
+        ds.push_back(1); // intially push 1 in ds vector 
         for(int i=1;i<n;i++)  ds.push_back(ds[i-1]*a[i-1]);
-        
+       //  we calculate prefix sum of vector a  and store in ds vector
+       // ds[1]=ds[0]*a[0] ,  ds[2] =ds[1]*a[1]  ,ds[3]=ds[2]*a[2] .....
+       //so bascially at each index of ds we store the sum till its  previous index
       int r=1;
-        
-        for(int i=n-1;i>=0;i--)  ds[i]=ds[i]*r, r=a[i]*r;
+        // initalise r=1 , in store r we store the suffix of vector a 
+        for(int i=n-1;i>=0;i--) {
+        // at each index r will be equal to suffix till previous index 
+        ds[i]=ds[i]*r; 
+         r=a[i]*r;  //then  update the value of r 
+         }
+
         
         return ds ;
     }
