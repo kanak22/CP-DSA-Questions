@@ -38,8 +38,13 @@ public:
             }
             valToPosMap[a[i]] = i;
         }
+
+        // valToLabelMap -> given a value of the node it gives the label in the preorder labelled node
+        // lastChildLabelMap -> given the value of the node it gives the label of the last child node sub rooted under node with value
         vector<int> valToLabelMap(100002, -1), lastChildLabelMap(100002, -1);
         int label = 0;
+
+        // preprocessing step
         preorderLabel(valToLabelMap, a, graph, 0, label, lastChildLabelMap);
 
         if (valToLabelMap[1] == -1)
@@ -49,11 +54,15 @@ public:
         int num = 2;
         while (child != -1)
         {
+            // obtain label range
             int value = a[child];
             int left = valToLabelMap[value];
             int right = lastChildLabelMap[value];
             int labelOfNum = valToLabelMap[num];
+
+            // check whether number is present in the subtree or not
             if (left <= labelOfNum && labelOfNum <= right)
+                // search for next smaller number
                 num++;
             else
             {
@@ -64,6 +73,7 @@ public:
         return ans;
     }
 
+    // performs preorder traversal and assigns labels to the nodes starting from node 0
     void preorderLabel(vector<int> &valToLabelMap, vector<int> &a, vector<vector<int>> &graph, int u, int &label, vector<int> &lastChildLabelMap)
     {
         int value = a[u];
