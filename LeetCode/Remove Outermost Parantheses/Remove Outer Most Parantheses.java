@@ -2,6 +2,8 @@
 
 class Solution {
     public String removeOuterParentheses(String s) {
+        //start: to find the opening bracket
+        //count: to closing baracket
         int count=0, start=0;
         StringBuilder res= new StringBuilder();
         
