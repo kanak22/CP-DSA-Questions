@@ -1,6 +1,6 @@
 // JAVA program to compute factorial
 // of big numbers
-class GFG {
+class LargeFactorial {
      
     // This function finds factorial of
     // large numbers and prints them
