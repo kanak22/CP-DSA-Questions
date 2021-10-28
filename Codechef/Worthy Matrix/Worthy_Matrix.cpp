@@ -125,7 +125,7 @@ void solve()
 int main()
 {
     fastIO; // Fast input / output
-    No. of cases
+    // No. of cases
     cases(t)
         solve();
 }
