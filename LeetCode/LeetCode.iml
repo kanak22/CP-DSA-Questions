@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Best TIme to Buy and Sell Stocks" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Best Time to Buy &amp; Sell Stocks III" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Search in 2d array" isTestSource="false" packagePrefix="Algorithms" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Tree Zigzag Level Order Traversal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Container With Most Water" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Covert BST To Greater Tree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Find First and Last Position in Sorted Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Find In Rotated Sorted Array II" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Find in Mountain Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/First Missing Positive" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/House Robber" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Integer To Roman" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/KokoEatingBananas" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Kth Smallest Element in a Sorted Matrix" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Longest Harmonious Subsequence" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Longest Substring Without Repeating Characters" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lowest Common Ancestor" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Map Sum Pairs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Maximum Subarray" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Median of Two Sorted Arrays" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Merge Interval" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Merge k sorted list" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Permutations" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Plus One" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Remove Duplicates from Sorted Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Remove Outermost Parantheses" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Search In Rotated Sorted Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Search Suggestions System" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Single Number" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sort Colors" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Split Array Largest Sum" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Three Sum" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Trapping Rain Water" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Ugly Number" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Unique Binary Search Trees II" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

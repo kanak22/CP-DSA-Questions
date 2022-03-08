@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/450 DSA/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/450 DSA/Arrays/Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/450 DSA/Binary Trees/Binary Trees.iml" filepath="$PROJECT_DIR$/450 DSA/Binary Trees/Binary Trees.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CP-DSA-Questions.iml" filepath="$PROJECT_DIR$/.idea/CP-DSA-Questions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GFG/GFG.iml" filepath="$PROJECT_DIR$/GFG/GFG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HackerRank/HackerRank.iml" filepath="$PROJECT_DIR$/HackerRank/HackerRank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InterviewBit/InterviewBit.iml" filepath="$PROJECT_DIR$/InterviewBit/InterviewBit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LeetCode/LeetCode.iml" filepath="$PROJECT_DIR$/LeetCode/LeetCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Codeforces/Rating 1000/Rating 1000.iml" filepath="$PROJECT_DIR$/Codeforces/Rating 1000/Rating 1000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Codeforces/Rating 1100/Rating 1100.iml" filepath="$PROJECT_DIR$/Codeforces/Rating 1100/Rating 1100.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Codeforces/Rating 1500/Rating 1500.iml" filepath="$PROJECT_DIR$/Codeforces/Rating 1500/Rating 1500.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Codeforces/Rating 1600/Rating 1600.iml" filepath="$PROJECT_DIR$/Codeforces/Rating 1600/Rating 1600.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Codeforces/Rating 1700/Rating 1700.iml" filepath="$PROJECT_DIR$/Codeforces/Rating 1700/Rating 1700.iml" />
+    </modules>
+  </component>
+</project>
