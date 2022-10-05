@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int jump(vector<int>& nums) {
+	int n = nums.size();
+	int cur = nums[0];
+	int maxPos = nums[0];
+	int jump = n == 1 ? 0 : 1;
+	for (int i = 1; i < n; i++)
+	{
+		if (i == n - 1)break;
+		maxPos = max(maxPos, i + nums[i]);
+		if (cur == i)
+		{
+			cur = maxPos;;
+			jump++;
+		}
+	}
+	return jump;
+
+}
+int main(int argc, char const *argv[])
+{
+
+	int n;
+	cin >> n;
+	vector<int>arr(n);
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+	cout << jump(arr);
+	return 0;
+}
