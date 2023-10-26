@@ -1,0 +1,45 @@
+class Solution {
+public:
+    
+    bool searchMatrix(vector<vector<int>>& m, int target) {
+        if(!m.size() || !m[0].size()) return false;  // check the base condition that size is zero or not 
+        
+        int row, mid;
+        int lo = 0, hi = m.size()-1;   // first starting and end point 
+        
+        
+        while(lo < hi) {          // loop to find the element 
+            mid = (lo + hi)/2;
+            
+            if(m[mid].back() < target) { 
+                lo = mid + 1;
+            }
+            
+            else if(m[mid][0] > target) { 
+                hi = mid-1;
+            }
+            else {
+                lo = mid;
+                break;
+            }
+        }
+        row = lo;
+        lo = 0;
+        hi = m[row].size()-1;
+        
+        while (lo <= hi) {      //important case
+            mid = (lo + hi)/2;
+            
+            if(m[row][mid] < target) {
+                lo = mid + 1;
+            }
+            
+            else if(m[row][mid] > target) {
+                hi = mid-1;
+            }
+            
+            else return true;
+        }
+        return false;
+    }
+};
